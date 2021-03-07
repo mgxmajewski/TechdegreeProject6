@@ -11,6 +11,7 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
 app.get("/", (req, res) => {
+    console.log({projects});
     res.render("index");
 });
 
