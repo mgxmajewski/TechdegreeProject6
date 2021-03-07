@@ -1,0 +1,22 @@
+{
+  "projects" : [
+    {
+      "id": 1,
+      "project_name": "Random quotes generator",
+      "description": "Practice your knowledge of basic JavaScript syntax and data structures by building a Random Quote Generator, a program that displays a randomly selected quote each time the user clicks a button.",
+      "technologies": ["HTML", "js"],
+      "live_link": "https://mgxmajewski.github.io/TechdegreeProject1/",
+      "github_link": "https://github.com/mgxmajewski/TechdegreeProject1",
+      "image_urls": ["images/01_ran_quo_gen_squre.png", "images/01_ran_quo_gen_wide.png"]
+    },
+    {
+      "id": 2,
+      "project_name": "List Pagination and Filtering",
+      "description": "Displaying a long list of items on a web page, like a list of 200 movie titles or 400 products, can overwhelm a user with too much information at once. A common solution is to display a handful of items on one page and provide navigation to jump to a list of more items. In this project, you'll write JavaScript to divide a long list into a series of \"pages\" and improve the user experience of a web page.",
+      "technologies": ["HTML", "js"],
+      "live_link": "https://mgxmajewski.github.io/TechdegreeProject2/",
+      "github_link": "https://github.com/mgxmajewski/TechdegreeProject2",
+      "image_urls": ["images/02_lis_pag_fil_square.png", "images/02_lis_pag_fil_wide.png"]
+    }
+  ]
+}
