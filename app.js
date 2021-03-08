@@ -22,6 +22,18 @@ app.get("/about", (req, res) => {
 });
 
 
+app.get('/project/:id', function(req, res, next) {
+    const projectId = req.params.id;
+    const project = projects.find( ({ id }) => id === +projectId );
+
+    console.log(project);
+    if (project) {
+        res.render('project', { project });
+    } else {
+        res.sendStatus(404);
+    }
+});
+
 
 
 app.listen(port, () => {
