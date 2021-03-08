@@ -27,19 +27,18 @@ app.get("/about", (req, res) => {
 app.get('/project/:id', function(req, res, next) {
     const projectId = req.params.id;
     const project = projects.find( ({ id }) => id === +projectId );
-
-    console.log(project);
     if (project) {
         res.render('project', { project });
-    } else {
-        next(createError(404));
     }
+    next();
 });
 
+// Catches 404 in case no route can serve request
 app.use(function(req, res, next) {
     next(createError(404));
 });
 
+// Handles errors
 app.use(function(err, req, res, next) {
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
