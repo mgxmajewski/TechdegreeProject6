@@ -16,6 +16,13 @@ app.get("/", (req, res) => {
     res.render("index");
 });
 
+app.get("/about", (req, res) => {
+    // console.log({projects});
+    res.render("about");
+});
+
+
+
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
