@@ -3,12 +3,14 @@ const { projects } = require('./data/data.json');
 const path = require('path');
 const app = express();
 const port = 3000;
+const createError = require('http-errors');
+const logger = require('morgan');
 
 app.set('views', path.join(__dirname, 'views'));
 
 app.set("view engine", "pug");
 app.use('/static', express.static(path.join(__dirname, 'public')));
-// app.use(express.static(__dirname + '/public'));
+app.use(logger('dev'));
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -30,11 +32,22 @@ app.get('/project/:id', function(req, res, next) {
     if (project) {
         res.render('project', { project });
     } else {
-        res.sendStatus(404);
+        next(createError(404));
     }
 });
 
+app.use(function(req, res, next) {
+    next(createError(404));
+});
 
+app.use(function(err, req, res, next) {
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
+    console.log(res.locals.message);
+    console.log(res.locals.error);
+    res.status(err.status || 500);
+    res.render('error');
+});
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
