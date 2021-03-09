@@ -4,19 +4,33 @@
       "id": 1,
       "project_name": "Random quotes generator",
       "description": "Practice your knowledge of basic JavaScript syntax and data structures by building a Random Quote Generator, a program that displays a randomly selected quote each time the user clicks a button.",
-      "technologies": ["HTML", "js"],
+      "technologies": [ "HTML", "JavaScript" ],
       "live_link": "https://mgxmajewski.github.io/TechdegreeProject1/",
       "github_link": "https://github.com/mgxmajewski/TechdegreeProject1",
-      "image_urls": ["../static/images/01_ran_quo_gen_square.png", "../static/images/01_ran_quo_gen_wide.png"]
+      "image_urls": [ "../static/images/01_01_ran_quo_gen_square.png",
+                      "../static/images/01_01_ran_quo_gen_wide.png" ]
     },
     {
       "id": 2,
       "project_name": "List Pagination and Filtering",
       "description": "Displaying a long list of items on a web page, like a list of 200 movie titles or 400 products, can overwhelm a user with too much information at once. A common solution is to display a handful of items on one page and provide navigation to jump to a list of more items. In this project, you'll write JavaScript to divide a long list into a series of \"pages\" and improve the user experience of a web page.",
-      "technologies": ["HTML", "js"],
+      "technologies": [ "HTML", "JavaScript" ],
       "live_link": "https://mgxmajewski.github.io/TechdegreeProject2/",
       "github_link": "https://github.com/mgxmajewski/TechdegreeProject2",
-      "image_urls": ["../static/images/02_lis_pag_fil_square.png", "../static/images/02_lis_pag_fil_wide.png"]
+      "image_urls": [ "../static/images/02_01_lis_pag_fil_square.png",
+                      "../static/images/02_01_lis_pag_fil_wide.png" ]
+    },
+    {
+      "id": 3,
+      "project_name": "OOP Game Show App",
+      "description": "Create a browser-based, word guessing game: \"Phrase Hunter.\" You’ll use JavaScript and OOP (Object-Oriented Programming) to select a random, hidden phrase. A player tries to guess the phrase by selecting individual letters from an onscreen keyboard. Can they guess the phrase before they run out of attempts?",
+      "technologies": [ "HTML", "JavaScript" ],
+      "live_link": "https://mgxmajewski.github.io/TechdegreeProject4/",
+      "github_link": "https://github.com/mgxmajewski/TechdegreeProject4",
+      "image_urls": [ "../static/images/03_01_gam_sho_oop_square.png",
+                      "../static/images/03_01_gam_sho_oop_wide.png",
+                      "../static/images/03_02_gam_sho_oop_wide.png",
+                      "../static/images/03_03_gam_sho_oop_wide.png" ]
     }
   ]
 }
