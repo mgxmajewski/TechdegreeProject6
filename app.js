@@ -14,12 +14,10 @@ app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    // console.log({projects});
     res.render("index", {projects});
 });
 
 app.get("/about", (req, res) => {
-    // console.log({projects});
     res.render("about");
 
 });
