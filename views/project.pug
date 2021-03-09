@@ -33,8 +33,7 @@ block content
     .project-img-box.box
 
       //- Replace the URLs in the src attributes below with interpolated template literals to dynamically add your project images, and add descriptions to the alt attributes
-      - var n = 1;
-      ul
+      - let n = 1;
         while n < project.image_urls.length
           img.project-img(src=`${project.image_urls[n++]}`, alt=``)
 
