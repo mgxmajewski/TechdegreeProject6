@@ -15,22 +15,24 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
     // console.log({projects});
-    res.render("index");
+    res.render("index", {projects});
 });
 
 app.get("/about", (req, res) => {
     // console.log({projects});
     res.render("about");
+
 });
 
 
-app.get('/project/:id', function(req, res, next) {
+app.get('/project/:id', function(req, res, next ) {
     const projectId = req.params.id;
     const project = projects.find( ({ id }) => id === +projectId );
     if (project) {
-        res.render('project', { project });
+        res.render('project', {project} );
+    } else {
+        next(createError(404));
     }
-    next();
 });
 
 // Catches 404 in case no route can serve request
@@ -39,13 +41,16 @@ app.use(function(req, res, next) {
 });
 
 // Handles errors
-app.use(function(err, req, res, next) {
+app.use(function(err, req, res) {
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
-    console.log(res.locals.message);
+    // console.log(res.locals.message);
     console.log(res.locals.error);
-    res.status(err.status || 500);
-    res.render('error');
+    if (err.status === 404){
+        res.render('page-not-found');
+    } else {
+        res.render('error');
+    }
 });
 
 app.listen(port, () => {
