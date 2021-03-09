@@ -4,25 +4,26 @@ const path = require('path');
 const app = express();
 const port = 3000;
 const createError = require('http-errors');
-// const logger = require('morgan');
 
+// Set view engine and path
 app.set('views', path.join(__dirname, 'views'));
-
 app.set("view engine", "pug");
+
+// Set static route
 app.use('/static', express.static(path.join(__dirname, 'public')));
-// app.use(logger('dev'));
 app.use(express.json());
 
+// Render home route
 app.get("/", (req, res) => {
     res.render("index", {projects});
 });
 
+//Render about route
 app.get("/about", (req, res) => {
     res.render("about");
-
 });
 
-
+// Dynamically renders project according to it's index
 app.get('/project/:id', function(req, res, next ) {
     const projectId = req.params.id;
     const project = projects.find( ({ id }) => id === +projectId );
