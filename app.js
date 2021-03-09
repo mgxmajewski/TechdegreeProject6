@@ -25,14 +25,10 @@ app.get("/about", (req, res) => {
 });
 
 
-app.get('/project/:id', function(req, res, next ) {
+app.get('/project/:id', function(req, res) {
     const projectId = req.params.id;
     const project = projects.find( ({ id }) => id === +projectId );
-    if (project) {
         res.render('project', {project} );
-    } else {
-        next(createError(404));
-    }
 });
 
 // Catches 404 in case no route can serve request
@@ -41,15 +37,15 @@ app.use(function(req, res, next) {
 });
 
 // Handles errors
-app.use(function(err, req, res) {
-    res.locals.message = err.message;
-    res.locals.error = req.app.get('env') === 'development' ? err : {};
-    // console.log(res.locals.message);
-    console.log(res.locals.error);
-    if (err.status === 404){
-        res.render('page-not-found');
+app.use((err, req, res) => {
+    // Ensure the err object has status and message properties defined
+    err.status = err.status || 500;
+    err.message = err.message || 'Server error';
+    res.status(err.status);
+    if (res.statusCode === 404) {
+        res.render('page-not-found', { err });
     } else {
-        res.render('error');
+        res.render('error', { err });
     }
 });
 
