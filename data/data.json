@@ -50,8 +50,7 @@
       "technologies": [ "HTML", "JavaScript" ],
       "live_link": "https://mgxmajewski.github.io/TechdegreeProject5/",
       "github_link": "https://github.com/mgxmajewski/TechdegreeProject5",
-      "image_urls": [ "../static/images/03_01_gam_sho_oop_square.png",
-                      "../static/images/05_01_nod_exp_app_square.png",
+      "image_urls": [ "../static/images/05_01_nod_exp_app_square.png",
                       "../static/images/05_01_nod_exp_app_wide.png",
                       "../static/images/05_02_nod_exp_app_wide.png",
                       "../static/images/05_03_nod_exp_app_wide.png" ]
