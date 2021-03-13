@@ -42,8 +42,10 @@ app.use((err, req, res, next) => {
     err.message = err.message || 'Server error';
     res.status(err.status);
     if (res.statusCode === 404) {
+        console.log("I'm sorry, page not found;(");
         res.render('page-not-found', { err });
     } else {
+        console.log("I'm sorry, server error;(");
         res.render('error', { err });
     }
 });
