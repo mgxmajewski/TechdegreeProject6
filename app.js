@@ -2,7 +2,7 @@ const express = require('express');
 const { projects } = require('./data/data.json');
 const path = require('path');
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 8080;
 const createError = require('http-errors');
 
 // Set view engine and path
@@ -50,8 +50,10 @@ app.use((err, req, res, next) => {
     }
 });
 
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+app.listen(PORT, () => {
+    console.log(
+    `Hello from Cloud Run! The container started successfully and is listening for HTTP requests on ${PORT}`
+  );
 })
 
 
